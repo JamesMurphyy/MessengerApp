@@ -6,7 +6,7 @@ import Cookies from "universal-cookie";
 // import ChannelContainer from "./components/ChannelContainer";
 // import ChannelListContainer from "./components/ChannelListContainer";
 
-import {ChannelContainer, ChannelListContainer, ChannelSearch} from './components'
+import {ChannelContainer, ChannelListContainer, ChannelSearch, TeamChannelList} from './components'
 
 import './App.css'
 
