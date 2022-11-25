@@ -8,7 +8,7 @@ const Auth = () => {
   const [isSignup, setisSignup] = useState(false);
 
   const handleChange = () => {}
-  
+
   return (
     <div className="auth__form-container">
       <div className="auth__form-container_fields">
@@ -27,6 +27,16 @@ const Auth = () => {
                 />
               </div>
             )}
+            <div className="aut__form-container_fields-content_input">
+                <label htmlFor="username">Username</label>
+                <input
+                  name="username"
+                  type="text"
+                  placeholder="Username"
+                  onChange={handleChange}
+                  required
+                />
+              </div>
           </form>
         </div>
       </div>
