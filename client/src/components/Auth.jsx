@@ -5,20 +5,22 @@ import Axios from "axios";
 import signinImage from "../assets/signup.jpg";
 
 const initialState = {
-  fullName: '',
-  username: '',
-  password: '',
-  confirmPassword: '',
-  phoneNumber: '',
-  avatarURL:''
-}
-
+  fullName: "",
+  username: "",
+  password: "",
+  confirmPassword: "",
+  phoneNumber: "",
+  avatarURL: "",
+};
 
 const Auth = () => {
-  const [form, setForm] = useState()
+  const [form, setForm] = useState(initialState);
   const [isSignup, setisSignup] = useState(false);
 
-  const handleChange = () => {};
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+    console.log(form);
+  };
 
   const switchMode = () => {
     setisSignup((prevIsSignup) => !prevIsSignup);
