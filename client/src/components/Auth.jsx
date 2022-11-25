@@ -4,7 +4,18 @@ import Axios from "axios";
 
 import signinImage from "../assets/signup.jpg";
 
+const initialState = {
+  fullName: '',
+  username: '',
+  password: '',
+  confirmPassword: '',
+  phoneNumber: '',
+  avatarURL:''
+}
+
+
 const Auth = () => {
+  const [form, setForm] = useState()
   const [isSignup, setisSignup] = useState(false);
 
   const handleChange = () => {};
