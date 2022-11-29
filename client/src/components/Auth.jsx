@@ -26,9 +26,12 @@ const Auth = () => {
     setisSignup((prevIsSignup) => !prevIsSignup);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(form);
+    // console.log(form);
+    const { fullName, username, password, phoneNumber, avatarURL } = form;
+
+    const URL = "http://localhost:5000/auth";
   };
 
   return (
