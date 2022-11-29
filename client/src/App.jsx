@@ -37,6 +37,7 @@ if (authToken) {
 // const authToken = false;
 
 const App = () => {
+  
   if (!authToken) return <Auth />;
 
   return (
