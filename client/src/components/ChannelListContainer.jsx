@@ -9,7 +9,7 @@ import LogoutIcon from "../assets/logout.png";
 
 const cookies = new Cookies();
 
-const SideBar = ({logout}) => (
+const SideBar = ({ logout }) => (
   <div className="channel-list__sidebar">
     <div className="channel-list__sidebar__icon1">
       <div className="icon1__inner">
@@ -26,13 +26,16 @@ const SideBar = ({logout}) => (
 
 const CompanyHeader = () => (
   <div className="channel-list__header">
-    <p className="channel-list__header__text">
-      Medical Pager
-      </p>
+    <p className="channel-list__header__text">Medical Pager</p>
   </div>
 );
 
-const ChannelListContainer = () => {
+const ChannelListContainer = ({
+  isCreating,
+  setIsCreating,
+  setCreateType,
+  setIsEditing,
+}) => {
   const logout = () => {
     cookies.remove("token");
     cookies.remove("userId");
@@ -43,47 +46,47 @@ const ChannelListContainer = () => {
     cookies.remove("phoneNumber");
 
     window.location.reload();
-  }
+  };
   return (
     <>
-      <SideBar logout={logout}/>
+      <SideBar logout={logout} />
       <div className="channel-list__list__wrapper">
         <CompanyHeader />
         <ChannelSearch />
-        <ChannelList 
-          filters={{}} 
-          channelRenderFilterFn={() => {}} 
+        <ChannelList
+          filters={{}}
+          channelRenderFilterFn={() => {}}
           List={(listProps) => (
-            <TeamChannelList 
-              {...listProps} 
-              type='team'
+            <TeamChannelList
+              {...listProps}
+              type="team"
+              isCreating={isCreating}
+              setIsCreating={setIsCreating}
+              setCreateType={setCreateType}
+              setIsEditing={setIsEditing}
             />
           )}
           Preview={(previewProps) => (
-            <TeamChannelPreview 
-              {...previewProps}
-              type='team'
-            />
-            
-            )}
-          />
-          <ChannelList 
-          filters={{}} 
-          channelRenderFilterFn={() => {}} 
+            <TeamChannelPreview {...previewProps} type="team" />
+          )}
+        />
+        <ChannelList
+          filters={{}}
+          channelRenderFilterFn={() => {}}
           List={(listProps) => (
-            <TeamChannelList 
-              {...listProps} 
-              type='messaging'
+            <TeamChannelList
+              {...listProps}
+              type="messaging"
+              isCreating={isCreating}
+              setIsCreating={setIsCreating}
+              setCreateType={setCreateType}
+              setIsEditing={setIsEditing}
             />
           )}
           Preview={(previewProps) => (
-            <TeamChannelPreview 
-              {...previewProps}
-              type='messaging'
-            />
-            
-            )}
-          />
+            <TeamChannelPreview {...previewProps} type="messaging" />
+          )}
+        />
       </div>
     </>
   );
