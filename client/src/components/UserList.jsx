@@ -15,11 +15,12 @@ const ListContainer = ({ children }) => {
   );
 };
 
-const UserItem = () => {
+const UserItem = ({ user }) => {
   return (
     <div className="user-item__wrapper">
       <div className="user-item__name-wrapper">
-        <Avatar />
+        <Avatar image={user.image} name={user.fullName || user.id} size={32} />
+        <p className="user-item__name"> {user.fullName || user.id} </p>
       </div>
     </div>
   );
@@ -55,9 +56,20 @@ const UserList = () => {
       }
       setLoading(false);
     };
+    if (client) getUsers();
   }, []);
 
-  return <ListContainer>UserList</ListContainer>;
+  return (
+    <ListContainer>
+      {loading ? (
+        <div className="user-list__message">Loading Users...</div>
+      ) : (
+        users?.map((user, i) => (
+          <UserItem index={i} key={user.id} user={user} />
+        ))
+      )}
+    </ListContainer>
+  );
 };
 
 export default UserList;
