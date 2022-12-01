@@ -29,7 +29,7 @@ const ChannelNameInput = ({ channelName = "", setChannelName }) => {
 const CreateChannel = ({ createType, setIsCreating }) => {
   const { client, setActiveChannel } = useChatContext();
   const [selectedUsers, setSelectedUsers] = useState(client.userID || "");
-  const [ChannelName, setChannelName] = useState("");
+  const [channelName, setChannelName] = useState("");
 
   const createChannel = async (e) => {
     e.preventDefault();
@@ -62,7 +62,7 @@ const CreateChannel = ({ createType, setIsCreating }) => {
       </div>
       {createType === "team" && (
         <ChannelNameInput
-          ChannelName={ChannelName}
+          channelName={channelName}
           setChannelName={setChannelName}
         />
       )}
