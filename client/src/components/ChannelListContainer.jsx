@@ -44,6 +44,7 @@ const ChannelListContent = ({
   setCreateType,
   setIsEditing,
 }) => {
+  const { client } = useChatContext();
   const logout = () => {
     cookies.remove("token");
     cookies.remove("userId");
@@ -55,6 +56,9 @@ const ChannelListContent = ({
 
     window.location.reload();
   };
+
+  const filters = { members: { $in: [client.userID] } };
+
   return (
     <>
       <SideBar logout={logout} />
@@ -62,7 +66,7 @@ const ChannelListContent = ({
         <CompanyHeader />
         <ChannelSearch />
         <ChannelList
-          filters={{}}
+          filters={filters}
           channelRenderFilterFn={customChannelTeamFilter}
           List={(listProps) => (
             <TeamChannelList
@@ -79,7 +83,7 @@ const ChannelListContent = ({
           )}
         />
         <ChannelList
-          filters={{}}
+          filters={filters}
           channelRenderFilterFn={customChannelMessagingFilter}
           List={(listProps) => (
             <TeamChannelList
@@ -139,4 +143,4 @@ const ChannelListContainer = ({
   );
 };
 
-export default ChannelListContent;
+export default ChannelListContainer;
