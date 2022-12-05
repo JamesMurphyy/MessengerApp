@@ -17,7 +17,7 @@ const ChannelSearch = () => {
 
   const onSearch = (e) => {
     e.preventDefault();
-    
+
     setLoading(true);
     setQuery(e.target.value);
     getChannels(e.target.value);

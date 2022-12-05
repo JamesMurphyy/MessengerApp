@@ -11,7 +11,7 @@ const TeamChannelList = ({
   setIsCreating,
   setCreateType,
   setIsEditing,
-  setToggleContainer
+  setToggleContainer,
 }) => {
   if (error) {
     return type === "team" ? (
