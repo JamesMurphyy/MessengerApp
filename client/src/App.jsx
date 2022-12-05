@@ -16,7 +16,7 @@ import {
 } from "./components";
 
 import "./App.css";
-import 'stream-chat-react/dist/css/index.css'
+import "stream-chat-react/dist/css/index.css";
 
 const cookies = new Cookies();
 
