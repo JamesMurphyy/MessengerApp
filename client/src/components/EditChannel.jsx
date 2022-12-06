@@ -33,6 +33,7 @@ const EditChannel = ({ setIsEditing }) => {
         <p>Edit Channel</p>
         <CloseCreateChannel setIsEditing={setIsEditing} />
       </div>
+      <ChannelNameInput channelName={channelName} setChannelName={setChannelName}/>
     </div>
   );
 };
