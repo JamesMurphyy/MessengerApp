@@ -22,7 +22,7 @@ const UserItem = ({ user, setSelectedUsers }) => {
   const handleSelect = () => {
     if (selected) {
       setSelectedUsers((prevUsers) =>
-        prevUsers.filer((prevUser) => prevUser !== user.id)
+        prevUsers.filter((prevUser) => prevUser !== user.id)
       );
     } else {
       setSelectedUsers((prevUsers) => [...prevUsers, user.id]);
