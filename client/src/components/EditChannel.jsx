@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useChatContext } from "stream-chat-react";
 
-import {UserList} from './';
+import { UserList } from "./";
 import { CloseCreateChannel } from "../assets";
 
 const ChannelNameInput = ({ channelName = "", setChannelName }) => {
@@ -26,12 +26,15 @@ const ChannelNameInput = ({ channelName = "", setChannelName }) => {
   );
 };
 
-const EditChannel = () => {
+const EditChannel = ({ setIsEditing }) => {
   return (
-    <div>
-      EditChannel
+    <div className="edit-channel__container">
+      <div className="edit-channel__header">
+        <p>Edit Channel</p>
+        <CloseCreateChannel setIsEditing={setIsEditing} />
+      </div>
     </div>
-  )
+  );
 };
 
 export default EditChannel;
