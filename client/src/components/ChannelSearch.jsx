@@ -17,6 +17,15 @@ const ChannelSearch = () => {
         name: { $autocomplete: text },
         members: { $in: [client.userID] },
       });
+      const userResponse = client.queryUsers({
+        id: { $ne: client.userID },
+        name: { $autocomplete: text },
+      });
+
+      const [channels, { users }] = await Promise.all([
+        channelResponse,
+        userResponse,
+      ]);
       
     } catch (error) {
       setQuery("");
