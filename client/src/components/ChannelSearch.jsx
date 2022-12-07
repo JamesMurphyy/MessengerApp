@@ -4,6 +4,7 @@ import { getChannel, useChatContext } from "stream-chat-react";
 import { SearchIcon } from "../assets";
 
 const ChannelSearch = () => {
+  const { client, setActiveChannel } = useChatContext();
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
 
