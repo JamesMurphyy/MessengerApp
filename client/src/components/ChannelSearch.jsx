@@ -26,7 +26,9 @@ const ChannelSearch = () => {
         channelResponse,
         userResponse,
       ]);
-      
+
+      if (channels.length) setTeamChannels(channels);
+      if (users.length) setDirectChannels(users);
     } catch (error) {
       setQuery("");
     }
