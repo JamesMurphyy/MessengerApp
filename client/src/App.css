@@ -475,10 +475,12 @@ body {
   margin-bottom: 8px;
   border: 1px solid transparent;
   width: 95%;
+  
 }
 
 .channel-search__input__wrapper:focus-within {
   border: 1px solid #fff;
+  
 }
 
 .channel-search__input__icon {
@@ -496,12 +498,18 @@ body {
   outline: none;
 }
 
-::placeholder {
+.channel-search__input__text::placeholder {
   color: rgba(255, 255, 255, 0.66);
   white-space: nowrap;
   width: 150px;
 }
 
+/*
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* .team-message-input__wrapper .str-chat__textarea textarea {
+  color: rgba(0, 0, 0, 0.66) !important
+} */
 .channel-search__results {
   position: absolute;
   height: fit-content;
