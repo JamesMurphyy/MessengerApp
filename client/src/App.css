@@ -408,8 +408,6 @@ body {
   justify-content: center;
 }
 
-
-
 .channel-list__sidebar__icon2 {
   width: 44px;
   height: 44px;
@@ -423,7 +421,7 @@ body {
   border-radius: 9999px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.33);
   cursor: pointer;
-  transition: background-color 0.5s ease-out 50ms
+  transition: background-color 0.5s ease-out 50ms;
 }
 
 .channel-list__sidebar__icon2:hover {
@@ -444,12 +442,18 @@ body {
 }
 
 .channel-list__header__text {
-  font-family: Helvetica Neue, sans-serif;
+  /* font-family: Helvetica Neue, sans-serif; */
+  /* font-family: "Playfair Display"; */
+  /* font-family: "Hammersmith One" ; */
+  /* font-family: "Lemon"; */
+  /* font-family: "Metrophobic"; */
+  font-family: "Syncopate";
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 28px;
   color: #ffffff;
+  text-transform: uppercase;
 }
 
 .channel-search__container {
@@ -1701,7 +1705,6 @@ div.rta__autocomplete.str-chat__emojisearch {
 .thread-message-input__icons svg:hover {
   cursor: pointer;
 }
-
 
 .thread-message-input__wrapper .str-chat__input--emojipicker {
   z-index: 3;
