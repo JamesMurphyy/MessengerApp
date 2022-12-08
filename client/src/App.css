@@ -192,9 +192,9 @@ body {
 .app__wrapper {
   display: flex;
   flex: 1;
-  /* height: 800px; */
+  height: 800px;
   height: 100%;
-  /* border-radius: 16px; */
+  border-radius: 16px;
   box-shadow: rgba(0, 0, 0, 0.33) 0px 1px 4px 0px;
 }
 
@@ -365,7 +365,7 @@ body {
 
 .channel-list__container {
   display: flex;
-  /* height: 800px; */
+  height: 800px;
   height: 100%;
   box-shadow: inset 1px 0px 0px rgba(0, 0, 0, 0.1);
 }
@@ -375,8 +375,8 @@ body {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     var(--primary-color);
   box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.25);
-  /* border-top-left-radius: 16px; */
-  /* border-bottom-left-radius: 16px; */
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
 }
 
 .channel-list__sidebar__icon1 {
@@ -408,6 +408,8 @@ body {
   justify-content: center;
 }
 
+
+
 .channel-list__sidebar__icon2 {
   width: 44px;
   height: 44px;
@@ -421,6 +423,11 @@ body {
   border-radius: 9999px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.33);
   cursor: pointer;
+  transition: background-color 0.5s ease-out 50ms
+}
+
+.channel-list__sidebar__icon2:hover {
+  background-color: #838383;
 }
 
 .icon2__inner {
@@ -1694,6 +1701,7 @@ div.rta__autocomplete.str-chat__emojisearch {
 .thread-message-input__icons svg:hover {
   cursor: pointer;
 }
+
 
 .thread-message-input__wrapper .str-chat__input--emojipicker {
   z-index: 3;
